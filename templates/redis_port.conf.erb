@@ -81,9 +81,11 @@ databases <%= @redis_databases %>
 #
 #   Note: you can disable saving at all commenting all the save lines.
 
+<% if @redis_snapshotting %>
 save 900 1
 save 300 10
 save 60 10000
+<% end %>
 
 # Compress string objects using LZF when dump .rdb databases?
 # For default that's set to 'yes' as it's almost always a win.
